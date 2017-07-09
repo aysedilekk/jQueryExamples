@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+
+    $("#hide1").click(function(){
+        $("#p1").hide(1000);
+    });
+
+    $("#hide2").click(function(){
+        $("#p2").toggle();
+    });
+});
+
+</script>
+</head>
+
+
+
+<body>
+<h2 style="color:blue;">Ayşe Dilek</h2>
+
+<p><a href="https://aysedilekk.github.io/">Web Page</a></p>
+
+<p id="test">Çift tıklama</p>
+
+<button>Click to hide</button><br>
+
+
+<p>If you click on the "Hide" button, All will disappear.</p>
+<button id="hide">Hide</button>
+<button id="show">Show</button><br>
+
+<br>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email"><br>
+
+<button id="hide1">Hide</button>
+<p id="p1">Kaybolan yazı</p>
+
+<button id="hide2">Hide-Show</button>
+<p id="p2">Kaybolan yazı</p>
+
+</body>
+</html>
