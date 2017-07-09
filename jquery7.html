@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        alert("Text: " + $("#test").text());
+    });
+    $("#btn2").click(function(){
+        alert("HTML: " + $("#test").html());
+    });
+
+    $("#btn3").click(function(){
+        alert("Value: " + $("#test1").val());
+    });
+
+    $("#btn4").click(function(){
+        alert($("#io").attr("href"));
+    });
+
+    $("#btn5").click(function(){
+        $("#t1").text("Hello!");
+    });
+    $("#btn6").click(function(){
+        $("#t2").html("<b>Hello world!</b>");
+    });
+    $("#btn7").click(function(){
+        $("#t3").val("Ayşe Dilek");
+    });
+
+    $("#btn8").click(function(){
+        $("#t4").text(function(i, origText){
+            return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; 
+        });
+    });
+
+    $("#btn9").click(function(){
+        $("#t5").html(function(i, origText){
+            return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+        });
+    });
+
+    $("#btn10").click(function(){
+        $("#w3s").attr({
+            "href" : "https://www.w3schools.com/jquery",
+            "title" : "W3Schools jQuery Tutorial"
+        });
+    });
+
+    $("#btn11").click(function(){
+        $("#p1").append(" <b>Appended text</b>.");
+    });
+
+    $("#btn12").click(function(){
+        $("ol").append("<li>Appended item</li>");
+    });
+
+    $("#btn13").click(function(){
+        $("#p1").prepend("<b>Prepended text</b>. ");
+    });
+    $("#btn14").click(function(){
+        $("ol").prepend("<li>Prepended item</li>");
+    });
+
+    $("#btn16").click(function(){
+        $("img").before("<b>Before</b>");
+    });
+
+    $("#btn17").click(function(){
+        $("img").after("<i>After</i>");
+    });
+
+    $("#btn19").click(function(){
+        $("#div1").remove();
+    });
+
+    $("#btn20").click(function(){
+        $("#div1").empty();
+    });
+});
+
+function appendText() {
+    var txt1 = "<p>Text.</p>";              // Create text with HTML
+    var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+    var txt3 = document.createElement("p");
+    txt3.innerHTML = "Text.";               // Create text with DOM
+    $("body").append(txt1, txt2, txt3);     // Append new elements
+}
+
+function afterText() {
+    var txt1 = "<b>I </b>";                   // Create element with HTML
+    var txt2 = $("<i></i>").text("love ");    // Create with jQuery
+    var txt3 = document.createElement("b");   // Create with DOM
+    txt3.innerHTML = "jQuery!";
+    $("img").after(txt1, txt2, txt3);      // Insert new elements after img
+}
+</script>
+</head>
+
+<body>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button><br><br>
+
+
+<p>Name: <input type="text" id="test1" value="Ayşe"></p>
+
+<button id="btn3">Show Value</button><br><br>
+
+<p><a href="https://aysedilekk.github.io/" id="io">aysedilekk</a></p>
+
+<button id="btn4">Show href Value</button><br><br>
+
+<p id="t1">This is a paragraph.</p>
+
+<p>Input field: <input type="text" id="t3" value="Mickey Mouse"></p>
+
+<button id="btn5">Set Text</button>
+<button id="btn6">Set HTML</button>
+<button id="btn7">Set Value</button><br><br>
+
+<p id="t4">This is a <b>bold</b> paragraph.</p>
+<p id="t5">This is another <b>bold</b> paragraph.</p>
+
+<button id="btn8">Show Old/New Text</button>
+<button id="btn9">Show Old/New HTML</button><br><br>
+
+<p><a href="https://www.w3schools.com" title="some title" id="w3s">W3Schools.com</a></p>
+
+<button id="btn10">Change href and title</button><br><br>
+
+<p id="p1">This is a paragraph.</p>
+
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn11">Append text</button>
+<button id="btn12">Append list items</button>
+<button id="btn13">Prepend text</button>
+<button id="btn14">Prepend list item</button><br><br>
+
+
+<button id="btn15" onclick="appendText()">Append new texts</button><br><br>
+
+
+<img href="https://www.google.com.tr/imgres?imgurl=http%3A%2F%2Ftolgacelik.net%2Fwp-content%2Fuploads%2F2015%2F04%2Fjquery.png&imgrefurl=http%3A%2F%2Ftolgacelik.net%2Fjquery-serisi-jquery-ornekleri-element-secmek-selectors%2F&docid=hFIJHk9bAsjB3M&tbnid=gQx_asW1zyf19M%3A&vet=10ahUKEwj035isvfzUAhXlIJoKHRvLCXsQMwg8KAIwAg..i&w=450&h=480&bih=958&biw=1920&q=jquery&ved=0ahUKEwj035isvfzUAhXlIJoKHRvLCXsQMwg8KAIwAg&iact=mrc&uact=8" alt="jQuery" width="100" height="140"><br><br>
+
+<button id="btn16">Insert before</button>
+<button id="btn17">Insert after</button>
+<button id="btn18" onclick="afterText()">Insert after new text</button><br><br>
+
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+This is some text in the div.
+<p>This is a paragraph in the div.</p>
+<p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button id="btn19">Remove</button>
+<button id="btn20">Empty</button>
+
+
+</body>
+</html>
