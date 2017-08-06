@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<title>JQuery Deneme Sayfası</title>
+	<h2 >Hello, my name is Ayşe and this is an example for JQuery.</h2>
+</head>
+
+
+<body>
+
+<p>Kutularda değişiklik yapmak için üzerine tıklayınız</p>
+
+<button id="b1">Click</button>
+
+<div class="row" >
+	<div class="col-md-4" id="d1" ></div>
+	<div class="col-md-4" id="d2" ></div>
+	<div class="col-md-4" id="d3"></div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    $("#b1").click(function(){
+        $("p").toggle();
+    });
+
+
+    $("#d1").click(function(){
+    	$(this).hide();
+    })
+
+
+
+    $("#d2").click(function(){
+    	$(this).css('background-color', 'yellow');
+    })
+
+
+    $("#d3").click(function(){
+        $(this).animate({
+            left: '250px',
+            height: '+=50px',
+            width: '+=50px'
+        });
+    });
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
